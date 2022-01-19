@@ -18,7 +18,6 @@ def calc_rec_area():
     width = eval(input("Enter the width: "))
     area = length * width
     print("Area =", area)
-calc_rec_area()
 
 def calc_volume():
     print("This function calculates the volume of a rectangle.")
@@ -27,7 +26,6 @@ def calc_volume():
     height = eval(input("Enter the height: "))
     volume = length * width * height
     print("Volume =", volume)
-calc_volume()
 
 
 def shooting_percentage():
@@ -36,7 +34,7 @@ def shooting_percentage():
     hits = eval(input("How many hits on target: "))
     accuracy = (hits / shots ) * 100
     print("Shooting Percentage =", accuracy, "%")
-shooting_percentage()
+
 
 
 def coffee():
@@ -46,7 +44,7 @@ def coffee():
     y = 0.86 * user_input
     ans = x + y + 1.50
     print("Your total is:", ans)
-coffee()
+
 
 
 def kilometers_to_miles():
@@ -54,7 +52,7 @@ def kilometers_to_miles():
     ans = eval(input("Enter Km: ")) * 0.62137
     round_ans = round(ans, 2)
     print("That's", round_ans, "miles!")
-kilometers_to_miles()
+
 
 
 if __name__ == '__main__':
