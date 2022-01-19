@@ -3,7 +3,7 @@ Arnold Aguila
 hw1.py
 
 Problem: Calculating the volume of a rectangle, Calculating shooting percentage, Calculating coffee per pound, and
-changing KM to Miles.
+changing Km to miles.
 
 Certification of Authenticity:
 <include one of the following>
@@ -35,7 +35,6 @@ def shooting_percentage():
     print("Shooting Percentage =", accuracy, "%")
 
 
-
 def coffee():
     print("This function calculates coffee cost per lbs.")
     user_input = eval(input("How many pounds of coffee purchased: "))
@@ -43,7 +42,6 @@ def coffee():
     y = 0.86 * user_input
     ans = x + y + 1.50
     print("Your total is:", ans)
-
 
 
 def kilometers_to_miles():
