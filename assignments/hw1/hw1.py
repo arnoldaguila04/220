@@ -8,7 +8,6 @@ changing KM to Miles.
 Certification of Authenticity:
 <include one of the following>
 I certify that this assignment is entirely my own work.
-
 """
 
 
