@@ -59,7 +59,7 @@ def encode_better():
     for j in key:
         new_list_key.append(((ord(j) - 65) % 57))
     for k in range(len(message)):
-        ans = ((new_list_message[k] + new_list_key[(k % 3)]) % 57)
+        ans = ((new_list_message[k] + new_list_key[(k % len(key))]) % 57)
         print(alphabet[ans - 1], end="")
 encode_better()
 
