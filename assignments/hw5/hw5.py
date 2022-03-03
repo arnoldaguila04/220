@@ -46,10 +46,10 @@ def third():
     third_list = []
     for i in range(num):
         sentence = input("enter sentence " + str(i + 1) + ": ")
-        x = sentence[0: len(sentence): 3]
-        third_list.append(x)
-    for item in third_list:
-        print(item)
+        sentence = sentence[0: len(sentence): 3]
+        third_list.append(sentence)
+    for j in third_list:
+        print(j)
 third()
 
 def word_average():

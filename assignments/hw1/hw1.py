@@ -47,7 +47,7 @@ def coffee():
 def kilometers_to_miles():
     print("This function changes km to miles")
     ans = eval(input("Enter Km: ")) * 0.62137
-    round_ans = round(ans, 2)
+    round_ans = ans
     print("That's", round_ans, "miles!")
 
 
