@@ -40,7 +40,60 @@ def won(guessed):
 
 
 def play_graphics(secret_word):
-    pass
+    from graphics import *
+
+    guesses = []
+    remaining_guesses_number = 7  # number set to seven cause of program bug
+    x = 1
+    letter = ""
+
+    # Graphics
+    win = GraphWin("hangman", 500, 500)
+    vertical_line = Line(Point(250, 150), Point(250, 350))  # Pole
+    base_line = Line(Point(150, 350), Point(300, 350))  # Pole
+    top_horizontal_line = Line(Point(250, 150), Point(150, 150))  # Pole
+    rope = Line(Point(150, 150), Point(150, 200))  # Pole
+    underscored_text = Text(Point(250, 400), make_hidden_secret(secret_word, guesses))  # starting underscore
+    won_text = Text(Point(250, 400), "You Won!")  # winning text
+    lose_text = Text(Point(250, 400), "You Lose. The word was " + secret_word)  # losing text
+    input_box = Entry(Point(250, 450), 10)  # User Input
+    patch = Line(Point(0, 0), Point(0, 0))  # quick Fix
+    head = Circle(Point(150, 220), 20)  # Body
+    body = Line(Point(150, 240), Point(150, 280))  # Body
+    right_leg = Line(Point(150, 280), Point(170, 310))  # Body
+    left_leg = Line(Point(150, 280), Point(130, 310))  # Body
+    right_arm = Line(Point(150, 245), Point(170, 275))  # Body
+    left_arm = Line(Point(150, 245), Point(130, 275))  # Body
+    vertical_line.draw(win)  # Pole
+    base_line.draw(win)  # Pole
+    top_horizontal_line.draw(win)  # Pole
+    rope.draw(win)  # Pole
+    input_box.draw(win)  # User Input
+    underscored_text.draw(win)
+    hanged_body = [left_arm, right_arm, left_leg, right_leg, body, head, patch]  # hangman body part list + patch
+
+    # process
+    while x != 0:
+        if won(make_hidden_secret(secret_word, guesses)) is True:
+            won_text.draw(win)
+            win.close()
+            break
+        if remaining_guesses_number == 0:
+            lose_text.draw(win)
+            win.close()
+            print("loss")
+            break
+        if letter_in_secret_word(letter, secret_word) and already_guessed(letter, guesses):
+            # color guess letter
+            underscored_text.setText(make_hidden_secret(secret_word, guesses))
+        else:
+            remaining_guesses_number = remaining_guesses_number - 1
+            hanged_body[remaining_guesses_number].draw(win)  # hangman body
+            underscored_text.setText(make_hidden_secret(secret_word, guesses))
+            # color guess letter
+        letter = input_box.getText()
+        guesses.append(letter)
+        win.getKey()
 
 
 def play_command_line(secret_word):
