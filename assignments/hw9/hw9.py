@@ -1,3 +1,6 @@
+from graphics import *
+
+
 def get_words(file_name):
     x = open(file_name, "r")
     return x.readlines()
@@ -40,8 +43,6 @@ def won(guessed):
 
 
 def play_graphics(secret_word):
-    from graphics import *
-
     guesses = []
     remaining_guesses_number = 7  # number set to seven cause of program bug
     x = 1
