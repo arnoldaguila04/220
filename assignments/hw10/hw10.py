@@ -37,6 +37,7 @@ def syracuse(n):
 
 
 def goldbach(n):
+
     empty_list = []
     i = 1
     j = 1
