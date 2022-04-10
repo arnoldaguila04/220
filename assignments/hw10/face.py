@@ -43,7 +43,6 @@ class Face:
         point_2.move(mouth_size / 2, mouth_off)
         self.mouth = Line(point_1, point_2)
         self.mouth.draw(window)
-        pass
 
     def shock(self):
         eye_size = 0.15 * size
@@ -65,7 +64,6 @@ class Face:
         point_2.move(mouth_size / 2, mouth_off)
         self.mouth = Line(point_1, point_2)
         self.mouth.draw(window)
-        pass
 
     def wink(self):
         eye_size = 0.15 * size
@@ -87,4 +85,3 @@ class Face:
         point_2.move(mouth_size / 2, mouth_off)
         self.mouth = Line(point_1, point_2)
         self.mouth.draw(window)
-        pass
