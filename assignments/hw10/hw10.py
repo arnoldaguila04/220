@@ -37,7 +37,18 @@ def syracuse(n):
 
 
 def goldbach(n):
-    pass
+    empty_list = []
+    i = 1
+    j = 1
+    while i <= n:
+        while j <= n:
+            if i + j == n and n % i == 0:
+                empty_list.append(i)
+                empty_list.append(j)
+                break
+            j += 1
+        i += 1
+    return empty_list
 
 
 if __name__ == '__main__':
