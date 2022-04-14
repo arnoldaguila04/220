@@ -29,29 +29,30 @@ class SalesForce:
             inner_list.append(total)
             inner_list.append(true_false)
             outer_list.append(inner_list)
+            inner_list = []
         return outer_list
 
     def top_seller(self):
         empty_list = []
+        x = self.sales_people[0]
         for person in self.sales_people:
-            for other_person in self.sales_people:
-                # print(person)
-                # print(other_person)
-                # print(person.compare_to(other_person))
-                if person != other_person:
-                    test = person.compare_to(other_person)
-                    if test == 1:
-                        empty_list.append(person)
-                    elif test == -1:
-                        empty_list.append(other_person)
-                    elif test == 0:
-                        empty_list.append(person)
-                        empty_list.append(other_person)
+            if person.compare_to(x) == 1:
+                x = person
+        for person in self.sales_people:
+            if person.compare_to(x) == 0:
+                empty_list.append(x)
+        return empty_list
 
     def individual_sales(self, employee_id):
         for person in self.sales_people:
-            if person.get_id == employee_id:
-                return person.get_name
+            if person.get_id() == employee_id:
+                return person
 
     def get_sale_frequencies(self):
-        pass
+        dictionary = {}
+        for person in self.sales_people:
+            sales = person.get_sales()
+            for sale in sales:
+                dictionary.setdefault(sale, 0)
+                dictionary[sale] += 1
+        return dictionary

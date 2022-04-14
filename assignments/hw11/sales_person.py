@@ -42,6 +42,3 @@ class SalesPerson:
 
     def __str__(self):
         return "{}-{}: {}".format(self.employee_id, self.name, self.total_sales())
-
-
-
