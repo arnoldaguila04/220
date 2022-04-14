@@ -79,10 +79,8 @@ def circle_overlap():
     else_message = Text(Point(5, 2), "The circle does not overlap")
     close_message = Text(Point(5,1), "Click again to close")
 
-    comparing_distance = math.sqrt((center.getX() - center2.getX()) ** 2 + (center.getY() - center2.getY() ** 2))
-    sum_of_two_radius = radius + radius2
 
-    if comparing_distance < sum_of_two_radius:
+    if did_overlap(circle_one, circle_two):
         if_message.draw(win)
     else:
         else_message.draw(win)
@@ -100,4 +98,4 @@ def did_overlap(circle_one, circle_two):
         return False
 
 if __name__ == '__main__':
-    pass
+    circle_overlap()
