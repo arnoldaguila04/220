@@ -34,13 +34,13 @@ class SalesForce:
 
     def top_seller(self):
         empty_list = []
-        x = self.sales_people[0]
+        other_person = self.sales_people[0]
         for person in self.sales_people:
-            if person.compare_to(x) == 1:
-                x = person
+            if person.compare_to(other_person) == 1:
+                other_person = person
         for person in self.sales_people:
-            if person.compare_to(x) == 0:
-                empty_list.append(x)
+            if person.compare_to(other_person) == 0:
+                empty_list.append(other_person)
         return empty_list
 
     def individual_sales(self, employee_id):

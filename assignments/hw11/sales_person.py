@@ -18,10 +18,10 @@ class SalesPerson:
         self.sales.append(sale)
 
     def total_sales(self):
-        x = 0
-        for i in self.sales:
-            x += i
-        return x
+        total = 0
+        for sale in self.sales:
+            total += sale
+        return total
 
     def get_sales(self):
         return self.sales
